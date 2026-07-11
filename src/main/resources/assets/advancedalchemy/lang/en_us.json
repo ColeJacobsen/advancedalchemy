@@ -1,0 +1,13 @@
+{
+  "itemGroup.advancedalchemy": "Example Mod Tab",
+  "block.advancedalchemy.example_block": "Example Block",
+  "item.advancedalchemy.example_item": "Example Item",
+
+  "advancedalchemy.configuration.title": "AdvancedAlchemy Configs",
+  "advancedalchemy.configuration.section.advancedalchemy.common.toml": "AdvancedAlchemy Configs",
+  "advancedalchemy.configuration.section.advancedalchemy.common.toml.title": "AdvancedAlchemy Configs",
+  "advancedalchemy.configuration.items": "Item List",
+  "advancedalchemy.configuration.logDirtBlock": "Log Dirt Block",
+  "advancedalchemy.configuration.magicNumberIntroduction": "Magic Number Text",
+  "advancedalchemy.configuration.magicNumber": "Magic Number"
+}
