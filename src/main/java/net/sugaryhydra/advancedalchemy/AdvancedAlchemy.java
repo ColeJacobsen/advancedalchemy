@@ -1,5 +1,6 @@
 package net.sugaryhydra.advancedalchemy;
 
+import net.sugaryhydra.advancedalchemy.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -31,6 +32,9 @@ public class AdvancedAlchemy {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        //registers items
+        ModItems.register(modEventBus);
+
         NeoForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
@@ -46,6 +50,13 @@ public class AdvancedAlchemy {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.POTIONOFLEVITATION);
+            event.accept(ModItems.POTIONOFBLINDFURY);
+        }
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SHULKERGUTS);
+        }
 
     }
 
