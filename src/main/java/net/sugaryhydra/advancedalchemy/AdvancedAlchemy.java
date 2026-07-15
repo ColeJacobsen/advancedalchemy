@@ -1,6 +1,8 @@
 package net.sugaryhydra.advancedalchemy;
 
+import net.minecraft.world.level.ItemLike;
 import net.sugaryhydra.advancedalchemy.item.ModItems;
+import net.sugaryhydra.advancedalchemy.potion.ModPotions;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -18,6 +20,8 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
+import static net.sugaryhydra.advancedalchemy.potion.ModPotions.*;
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(AdvancedAlchemy.MOD_ID)
 public class AdvancedAlchemy {
@@ -34,6 +38,8 @@ public class AdvancedAlchemy {
 
         //registers items
         ModItems.register(modEventBus);
+        ModPotions.register(modEventBus);
+
 
         NeoForge.EVENT_BUS.register(this);
 
@@ -51,7 +57,7 @@ public class AdvancedAlchemy {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ModItems.POTIONOFLEVITATION);
+            //event.accept();
             event.accept(ModItems.POTIONOFBLINDFURY);
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {

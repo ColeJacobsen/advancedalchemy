@@ -10,7 +10,7 @@ public class ModItems {
     //Register for all mod items
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AdvancedAlchemy.MOD_ID);
 
-    public static final DeferredItem<Item> POTIONOFLEVITATION = ITEMS.registerSimpleItem("potion_of_levitation");
+    //public static final DeferredItem<Item> POTIONOFLEVITATION = ITEMS.registerSimpleItem("potion_of_levitation");
     public static final DeferredItem<Item> POTIONOFBLINDFURY= ITEMS.registerSimpleItem("potion_of_blind_fury");
     public static final DeferredItem<Item> SHULKERGUTS = ITEMS.registerSimpleItem("shulker_guts");
 

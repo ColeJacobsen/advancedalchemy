@@ -1,5 +1,7 @@
 {
-  "item.advancedalchemy.potion_of_levitation": "Potion of Levitation",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_levitation": "Potion of Levitation",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_levitation": "Splash Potion of Levitation",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_levitation": "Lingering Potion of Levitation",
   "item.advancedalchemy.potion_of_blind_fury": "Potion of Blind Fury",
   "item.advancedalchemy.shulker_guts": "Shulker Guts"
 }
