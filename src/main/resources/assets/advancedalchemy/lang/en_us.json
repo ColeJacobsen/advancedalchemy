@@ -1,7 +1,16 @@
 {
+  "item.advancedalchemy.shulker_guts": "Shulker Guts",
+  "item.advancedalchemy.wither_bone": "Wither Bone",
   "item.minecraft.potion.effect.advancedalchemy_potion_of_levitation": "Potion of Levitation",
   "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_levitation": "Splash Potion of Levitation",
   "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_levitation": "Lingering Potion of Levitation",
-  "item.advancedalchemy.potion_of_blind_fury": "Potion of Blind Fury",
-  "item.advancedalchemy.shulker_guts": "Shulker Guts"
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_decay": "Potion of Decay",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_decay": "Splash Potion of Decay",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_decay": "Lingering Potion of Decay",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_haste": "Potion of Haste",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_haste": "Splash Potion of Haste",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_haste": "Lingering Potion of Haste",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_fatigue": "Potion of Fatigue",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_fatigue": "Splash Potion of Fatigue",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_fatigue": "Lingering Potion of Fatigue"
 }

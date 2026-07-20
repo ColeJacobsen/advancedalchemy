@@ -19,8 +19,7 @@ public class ModModelProvider extends ModelProvider {
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-        itemModels.generateFlatItem(ModItems.POTIONOFBLINDFURY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.SHULKERGUTS.get(), ModelTemplates.FLAT_ITEM);
-        //itemModels.generatePotion();
+        itemModels.generateFlatItem(ModItems.WITHERBONE.get(), ModelTemplates.FLAT_ITEM);
     }
 }

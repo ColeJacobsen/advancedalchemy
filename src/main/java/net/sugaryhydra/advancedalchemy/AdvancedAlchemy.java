@@ -58,10 +58,10 @@ public class AdvancedAlchemy {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             //event.accept();
-            event.accept(ModItems.POTIONOFBLINDFURY);
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.SHULKERGUTS);
+            event.accept(ModItems.WITHERBONE);
         }
 
     }
