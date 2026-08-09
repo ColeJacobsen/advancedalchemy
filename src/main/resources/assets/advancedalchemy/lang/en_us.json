@@ -12,5 +12,13 @@
   "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_haste": "Lingering Potion of Haste",
   "item.minecraft.potion.effect.advancedalchemy_potion_of_fatigue": "Potion of Fatigue",
   "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_fatigue": "Splash Potion of Fatigue",
-  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_fatigue": "Lingering Potion of Fatigue"
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_fatigue": "Lingering Potion of Fatigue",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_nausea": "Potion of Nausea",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_nausea": "Splash Potion of Nausea",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_nausea": "Lingering Potion of Nausea",
+  "effect.advancedalchemy.milky": "Milky",
+  "effect.advancedalchemy.milky.description": "Removes all effects from an entity",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_null": "Potion of Null",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_null": "Splash Potion of Null",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_null": "Lingering Potion of Null"
 }

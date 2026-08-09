@@ -13,6 +13,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.alchemy.Potion;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.sugaryhydra.advancedalchemy.effect.ModEffects;
 
 import java.util.function.Supplier;
 
@@ -36,6 +37,14 @@ public class ModPotions {
     public static final Holder<Potion> POTIONOFFATIGUE =
             POTIONS.register("advancedalchemy_potion_of_fatigue", () ->
                     new Potion("advancedalchemy_potion_of_fatigue", new MobEffectInstance(MobEffects.MINING_FATIGUE, 3600, 0)));
+
+    public static final Holder<Potion> POTIONOFNAUSEA =
+            POTIONS.register("advancedalchemy_potion_of_nausea", () ->
+                    new Potion("advancedalchemy_potion_of_nausea", new MobEffectInstance(MobEffects.NAUSEA, 3600, 0)));
+
+    public static final Holder<Potion> POTIONOFNULL =
+            POTIONS.register("advancedalchemy_potion_of_null", () ->
+                    new Potion("advancedalchemy_potion_of_null", new MobEffectInstance(ModEffects.MILKY,0,0)));
 
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);

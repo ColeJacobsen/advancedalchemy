@@ -1,6 +1,7 @@
 package net.sugaryhydra.advancedalchemy;
 
 import net.minecraft.world.level.ItemLike;
+import net.sugaryhydra.advancedalchemy.effect.ModEffects;
 import net.sugaryhydra.advancedalchemy.item.ModItems;
 import net.sugaryhydra.advancedalchemy.potion.ModPotions;
 import org.slf4j.Logger;
@@ -39,6 +40,7 @@ public class AdvancedAlchemy {
         //registers items
         ModItems.register(modEventBus);
         ModPotions.register(modEventBus);
+        ModEffects.register(modEventBus);
 
 
         NeoForge.EVENT_BUS.register(this);
