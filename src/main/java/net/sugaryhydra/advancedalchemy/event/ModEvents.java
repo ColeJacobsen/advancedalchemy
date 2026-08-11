@@ -24,6 +24,7 @@ public class ModEvents {
         builder.addMix(Potions.SWIFTNESS, Items.GOLD_INGOT, ModPotions.POTIONOFHASTE);
         builder.addMix(ModPotions.POTIONOFHASTE, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFFATIGUE);
         builder.addMix(Potions.AWKWARD, Items.MILK_BUCKET, ModPotions.POTIONOFNULL);
+        builder.addMix(Potions.AWKWARD, Items.SCULK_CATALYST, ModPotions.POTIONOFBLINDFURY);
 
         //Modded Items, Vanilla effects
         builder.addMix(Potions.AWKWARD, ModItems.SHULKERGUTS.get(), ModPotions.POTIONOFLEVITATION);

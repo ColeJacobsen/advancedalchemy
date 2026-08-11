@@ -20,5 +20,10 @@
   "effect.advancedalchemy.milky.description": "Removes all effects from an entity",
   "item.minecraft.potion.effect.advancedalchemy_potion_of_null": "Potion of Null",
   "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_null": "Splash Potion of Null",
-  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_null": "Lingering Potion of Null"
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_null": "Lingering Potion of Null",
+  "effect.advancedalchemy.blind_fury": "Blind Fury",
+  "effect.advancedalchemy.blind_fury.description": "Gain the speed, strength, and sight of the Warden",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_blind_fury": "Potion of Blind Fury",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_blind_fury": "Splash Potion of Blind Fury",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_blind_fury": "Lingering Potion of Blind Fury"
 }

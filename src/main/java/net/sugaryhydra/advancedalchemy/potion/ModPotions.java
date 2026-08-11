@@ -42,9 +42,17 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_nausea", () ->
                     new Potion("advancedalchemy_potion_of_nausea", new MobEffectInstance(MobEffects.NAUSEA, 3600, 0)));
 
+
     public static final Holder<Potion> POTIONOFNULL =
             POTIONS.register("advancedalchemy_potion_of_null", () ->
                     new Potion("advancedalchemy_potion_of_null", new MobEffectInstance(ModEffects.MILKY,0,0)));
+
+    public static final Holder<Potion> POTIONOFBLINDFURY =
+            POTIONS.register("advancedalchemy_potion_of_blind_fury", () ->
+                    new Potion("advancedalchemy_potion_of_blind_fury",
+                            new MobEffectInstance(MobEffects.STRENGTH,3600,4),
+                            new MobEffectInstance(MobEffects.SPEED,3600,4),
+                            new MobEffectInstance(MobEffects.BLINDNESS,3600,0)));
 
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);
