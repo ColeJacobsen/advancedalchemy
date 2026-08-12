@@ -16,7 +16,7 @@ public class ModEffects {
             () -> new MilkyEffect(MobEffectCategory.NEUTRAL, 0xffffff));
 
     public static final Holder<MobEffect> DRYSKIN = MOB_EFFECTS.register("dry_skin",
-            () -> new MilkyEffect(MobEffectCategory.NEUTRAL, 0x00d8db));
+            () -> new DrySkinEffect(MobEffectCategory.BENEFICIAL, 0xf7ec5c));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

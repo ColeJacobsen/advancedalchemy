@@ -21,8 +21,11 @@
   "item.minecraft.potion.effect.advancedalchemy_potion_of_null": "Potion of Null",
   "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_null": "Splash Potion of Null",
   "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_null": "Lingering Potion of Null",
-  "effect.advancedalchemy.blind_fury": "Blind Fury",
-  "effect.advancedalchemy.blind_fury.description": "Gain the speed, strength, and sight of the Warden",
+  "effect.advancedalchemy.dry_skin": "Dry Skin",
+  "effect.advancedalchemy.dry_skin.description": "Who lives in a pineapple under the sea?",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_dry_skin": "Potion of Dry Skin",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_dry_skin": "Splash Potion of Dry Skin",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_dry_skin": "Lingering Potion of Dry Skin",
   "item.minecraft.potion.effect.advancedalchemy_potion_of_blind_fury": "Potion of Blind Fury",
   "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_blind_fury": "Splash Potion of Blind Fury",
   "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_blind_fury": "Lingering Potion of Blind Fury"
