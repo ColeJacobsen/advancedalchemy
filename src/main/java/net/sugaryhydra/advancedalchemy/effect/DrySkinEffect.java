@@ -21,11 +21,9 @@ public class DrySkinEffect extends MobEffect {
         BlockPos center = mob.blockPosition();
         Level world = mob.level();
 
-        world.setBlock(center, Blocks.OAK_LOG.defaultBlockState(), 3);
-
         for (BlockPos p: BlockPos.betweenClosed(
-                center.offset(0 - amplification, 0 - amplification, 0 - amplification),
-                center.offset(0 + amplification, 0 + amplification, 0 + amplification)))
+                center.offset(-1 - amplification, -1 - amplification, -1 - amplification),
+                center.offset(1 + amplification, 1 + amplification, 1 + amplification)))
         {
             BlockState pos = world.getBlockState(p);
             if (pos.is(Blocks.WATER))
@@ -36,5 +34,11 @@ public class DrySkinEffect extends MobEffect {
 
         return super.applyEffectTick(serverLevel, mob, amplification);
 
+    }
+
+    @Override
+    public boolean shouldApplyEffectTickThisTick(int tickCount, int amplification)
+    {
+        return true;
     }
 }

@@ -49,7 +49,7 @@ public class ModPotions {
 
     public static final Holder<Potion> POTIONOFDRYSKIN =
             POTIONS.register("advancedalchemy_potion_of_dry_skin", () ->
-                    new Potion("advancedalchemy_potion_of_dry_skin", new MobEffectInstance(ModEffects.DRYSKIN,3600,1)));
+                    new Potion("advancedalchemy_potion_of_dry_skin", new MobEffectInstance(ModEffects.DRYSKIN,3600,0)));
 
     public static final Holder<Potion> POTIONOFBLINDFURY =
             POTIONS.register("advancedalchemy_potion_of_blind_fury", () ->
