@@ -11,24 +11,26 @@ import net.minecraft.world.level.block.state.BlockState;
 
 
 public class DrySkinEffect extends MobEffect {
-    public DrySkinEffect(MobEffectCategory category, int color) {
+    public DrySkinEffect(MobEffectCategory category, int color)
+    {
         super(category, color);
     }
 
     @Override
     public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity mob, int amplification)
     {
-        BlockPos center = mob.blockPosition();
-        Level world = mob.level();
+        if (mob.isInWater()) {
 
-        for (BlockPos p: BlockPos.betweenClosed(
-                center.offset(-1 - amplification, -1 - amplification, -1 - amplification),
-                center.offset(1 + amplification, 1 + amplification, 1 + amplification)))
-        {
-            BlockState pos = world.getBlockState(p);
-            if (pos.is(Blocks.WATER))
-            {
-                world.setBlock(p, Blocks.AIR.defaultBlockState(), 3);
+            BlockPos center = mob.blockPosition();
+            Level world = mob.level();
+
+            for (BlockPos p : BlockPos.betweenClosed(
+                    center.offset(-3 - amplification, -3 - amplification, -3 - amplification),
+                    center.offset(3 + amplification, 3 + amplification, 3 + amplification))) {
+                BlockState pos = world.getBlockState(p);
+                if (pos.is(Blocks.WATER)) {
+                    world.setBlock(p, Blocks.AIR.defaultBlockState(), 3);
+                }
             }
         }
 

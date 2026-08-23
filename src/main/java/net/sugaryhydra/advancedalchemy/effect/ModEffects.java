@@ -18,6 +18,12 @@ public class ModEffects {
     public static final Holder<MobEffect> DRYSKIN = MOB_EFFECTS.register("dry_skin",
             () -> new DrySkinEffect(MobEffectCategory.BENEFICIAL, 0xf7ec5c));
 
+    public static final Holder<MobEffect> FROSTRESISTANCE = MOB_EFFECTS.register("frost_resistance",
+            () -> new FrostResistanceEffect(MobEffectCategory.BENEFICIAL, 0x78edff));
+
+    public static final Holder<MobEffect> ENDWARPEFFECT = MOB_EFFECTS.register("end_warp",
+            () -> new EndWarpEffect(MobEffectCategory.NEUTRAL, 0x9840ad));
+
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }
