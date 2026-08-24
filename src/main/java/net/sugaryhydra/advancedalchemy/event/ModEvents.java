@@ -21,10 +21,12 @@ public class ModEvents {
         //Vanilla Items, Vanilla Effects
         builder.addMix(Potions.AWKWARD, Items.POTENT_SULFUR, ModPotions.POTIONOFNAUSEA);
         builder.addMix(Potions.LEAPING, Items.ENCHANTED_GOLDEN_APPLE, Potions.LUCK);
+        builder.addMix(Potions.LUCK, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFUNLUCK);
         builder.addMix(Potions.SWIFTNESS, Items.GOLD_INGOT, ModPotions.POTIONOFHASTE);
         builder.addMix(ModPotions.POTIONOFHASTE, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFFATIGUE);
         builder.addMix(Potions.AWKWARD, Items.MILK_BUCKET, ModPotions.POTIONOFNULL);
         builder.addMix(Potions.AWKWARD, Items.SCULK_CATALYST, ModPotions.POTIONOFBLINDFURY);
+        builder.addMix(ModPotions.POTIONOFHASTE, Items.HEART_OF_THE_SEA, ModPotions.POTIONOFTHECONDUIT);
 
         //Modded Items, Vanilla Effects
         builder.addMix(Potions.AWKWARD, ModItems.SHULKERGUTS.get(), ModPotions.POTIONOFLEVITATION);
