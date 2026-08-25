@@ -59,6 +59,10 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_end_warp", () ->
                     new Potion("advancedalchemy_potion_of_end_warp", new MobEffectInstance(ModEffects.ENDWARPEFFECT,3600,0)));
 
+    public static final Holder<Potion> POTIONOFRECOVERY=
+            POTIONS.register("advancedalchemy_potion_of_recovery", () ->
+                    new Potion("advancedalchemy_potion_of_recovery", new MobEffectInstance(ModEffects.RECOVERYEFFECT,0,0)));
+
     public static final Holder<Potion> POTIONOFBLINDFURY =
             POTIONS.register("advancedalchemy_potion_of_blind_fury", () ->
                     new Potion("advancedalchemy_potion_of_blind_fury",

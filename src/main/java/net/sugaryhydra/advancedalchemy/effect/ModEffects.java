@@ -24,6 +24,9 @@ public class ModEffects {
     public static final Holder<MobEffect> ENDWARPEFFECT = MOB_EFFECTS.register("end_warp",
             () -> new EndWarpEffect(MobEffectCategory.NEUTRAL, 0x9840ad));
 
+    public static final Holder<MobEffect> RECOVERYEFFECT = MOB_EFFECTS.register("recovery",
+            () -> new RecoveryEffect(MobEffectCategory.NEUTRAL, 0x43A39B));
+
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

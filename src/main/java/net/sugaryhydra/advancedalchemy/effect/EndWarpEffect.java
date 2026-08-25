@@ -41,7 +41,7 @@ public class EndWarpEffect extends MobEffect {
     public boolean teleport(ServerLevel level, LivingEntity mob, int amplification){
         float WarpRange = (amplification + 2) * 8;
 
-        if (!level.isClientSide() &&mob.isAlive())
+        if (!level.isClientSide() && mob.isAlive())
         {
             double xx = mob.getX() + (mob.getRandom().nextDouble() - (double)0.5F) * (double)WarpRange;
             double yy = mob.getY() + (double) (mob.getRandom().nextInt(64) -32);

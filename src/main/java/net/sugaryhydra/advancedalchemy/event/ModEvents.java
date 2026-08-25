@@ -36,6 +36,7 @@ public class ModEvents {
         builder.addMix(Potions.AWKWARD, Items.SPONGE, ModPotions.POTIONOFDRYSKIN);
         builder.addMix(Potions.AWKWARD, Items.BLUE_ICE, ModPotions.POTIONOFFROSTRESISTANCE);
         builder.addMix(Potions.AWKWARD, Items.CHORUS_FRUIT, ModPotions.POTIONOFENDWARP);
+        builder.addMix(ModPotions.POTIONOFRECOVERY, Items.ECHO_SHARD, ModPotions.POTIONOFRECOVERY);
 
     }
 
