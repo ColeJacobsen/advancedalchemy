@@ -17,5 +17,6 @@ public class ModModelProvider extends ModelProvider {
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         itemModels.generateFlatItem(ModItems.SHULKERGUTS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.WITHERBONE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ANCIENTCELL.get(), ModelTemplates.FLAT_ITEM);
     }
 }

@@ -77,7 +77,7 @@ public class EndWarpEffect extends MobEffect {
             {
                 level.gameEvent(GameEvent.TELEPORT, oldPos, GameEvent.Context.of(mob));
                 if (!mob.isSilent()) {
-                    level.playSound((Entity)null, mob.xo, mob.yo, mob.zo, SoundEvents.PLAYER_TELEPORT, mob.getSoundSource(), 1.0F, 1.0F);
+                    level.playSound(null, mob.xo, mob.yo, mob.zo, SoundEvents.PLAYER_TELEPORT, mob.getSoundSource(), 1.0F, 1.0F);
                     mob.playSound(SoundEvents.PLAYER_TELEPORT, 1.0F, 1.0F);
                 }
             }

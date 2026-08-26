@@ -1,6 +1,7 @@
 {
   "item.advancedalchemy.shulker_guts": "Shulker Guts",
   "item.advancedalchemy.wither_bone": "Wither Bone",
+  "item.advancedalchemy.ancient_cell": "Ancient Cell",
   "item.minecraft.potion.effect.advancedalchemy_potion_of_levitation": "Potion of Levitation",
   "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_levitation": "Splash Potion of Levitation",
   "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_levitation": "Lingering Potion of Levitation",
@@ -22,6 +23,9 @@
   "item.minecraft.potion.effect.advancedalchemy_potion_of_unluck": "Potion of Bad Luck",
   "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_unluck": "Splash Potion of Bad Luck",
   "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_unluck": "Lingering Potion of Bad Luck",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_the_extremophile": "Potion of The Extremophile",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_the_extremophile": "Splash Potion of The Extremophile",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_the_extremophile": "Lingering Potion of The Extremophile",
   "effect.advancedalchemy.milky": "Milky",
   "effect.advancedalchemy.milky.description": "Removes all effects from an entity",
   "item.minecraft.potion.effect.advancedalchemy_potion_of_null": "Potion of Null",

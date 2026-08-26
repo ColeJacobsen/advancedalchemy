@@ -64,6 +64,7 @@ public class AdvancedAlchemy {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.SHULKERGUTS);
             event.accept(ModItems.WITHERBONE);
+            event.accept(ModItems.ANCIENTCELL);
         }
 
     }

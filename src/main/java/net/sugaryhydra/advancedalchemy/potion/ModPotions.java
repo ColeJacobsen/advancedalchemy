@@ -1,5 +1,6 @@
 package net.sugaryhydra.advancedalchemy.potion;
 
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.sugaryhydra.advancedalchemy.AdvancedAlchemy;
 import net.minecraft.core.Holder;
@@ -69,6 +70,14 @@ public class ModPotions {
                             new MobEffectInstance(MobEffects.STRENGTH,3600,4),
                             new MobEffectInstance(MobEffects.SPEED,3600,4),
                             new MobEffectInstance(MobEffects.BLINDNESS,3600,0)));
+
+    public static final Holder<Potion> POTIONOFTHEEXTREMOPHILE =
+            POTIONS.register("advancedalchemy_potion_of_the_extremophile", () ->
+                    new Potion("advancedalchemy_potion_of_the_extremophile",
+                            new MobEffectInstance(ModEffects.FROSTRESISTANCE,3600,0),
+                            new MobEffectInstance(MobEffects.FIRE_RESISTANCE,3600,0),
+                            new MobEffectInstance(MobEffects.WATER_BREATHING,3600,0),
+                            new MobEffectInstance(MobEffects.SLOW_FALLING, 3600, 0)));
 
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);

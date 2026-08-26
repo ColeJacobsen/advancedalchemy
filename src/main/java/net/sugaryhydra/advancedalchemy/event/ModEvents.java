@@ -31,6 +31,7 @@ public class ModEvents {
         //Modded Items, Vanilla Effects
         builder.addMix(Potions.AWKWARD, ModItems.SHULKERGUTS.get(), ModPotions.POTIONOFLEVITATION);
         builder.addMix(Potions.AWKWARD, ModItems.WITHERBONE.get(), ModPotions.POTIONOFDECAY);
+        builder.addMix(Potions.AWKWARD, ModItems.ANCIENTCELL.get(), ModPotions.POTIONOFTHEEXTREMOPHILE);
 
         //Vanilla Items, Modded Effects
         builder.addMix(Potions.AWKWARD, Items.SPONGE, ModPotions.POTIONOFDRYSKIN);

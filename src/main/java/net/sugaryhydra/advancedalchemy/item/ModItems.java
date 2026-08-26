@@ -12,6 +12,7 @@ public class ModItems {
 
     public static final DeferredItem<Item> SHULKERGUTS = ITEMS.registerSimpleItem("shulker_guts");
     public static final DeferredItem<Item> WITHERBONE = ITEMS.registerSimpleItem("wither_bone");
+    public static final DeferredItem<Item> ANCIENTCELL = ITEMS.registerSimpleItem("ancient_cell");
 
 
 
