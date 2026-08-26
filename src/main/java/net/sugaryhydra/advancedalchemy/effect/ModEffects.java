@@ -21,11 +21,14 @@ public class ModEffects {
     public static final Holder<MobEffect> FROSTRESISTANCE = MOB_EFFECTS.register("frost_resistance",
             () -> new FrostResistanceEffect(MobEffectCategory.BENEFICIAL, 0x78edff));
 
-    public static final Holder<MobEffect> ENDWARPEFFECT = MOB_EFFECTS.register("end_warp",
+    public static final Holder<MobEffect> ENDWARP = MOB_EFFECTS.register("end_warp",
             () -> new EndWarpEffect(MobEffectCategory.NEUTRAL, 0x9840ad));
 
-    public static final Holder<MobEffect> RECOVERYEFFECT = MOB_EFFECTS.register("recovery",
+    public static final Holder<MobEffect> RECOVERY = MOB_EFFECTS.register("recovery",
             () -> new RecoveryEffect(MobEffectCategory.NEUTRAL, 0x43A39B));
+
+    public static final Holder<MobEffect> FREEZING = MOB_EFFECTS.register("freezing",
+            () -> new FreezingEffect(MobEffectCategory.HARMFUL, 0xb5e2e6));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

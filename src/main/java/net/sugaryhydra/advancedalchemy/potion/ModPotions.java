@@ -56,13 +56,17 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_frost_resistance", () ->
                     new Potion("advancedalchemy_potion_of_frost_resistance", new MobEffectInstance(ModEffects.FROSTRESISTANCE,3600,0)));
 
+    public static final Holder<Potion> POTIONOFFREEZING =
+            POTIONS.register("advancedalchemy_potion_of_freezing", () ->
+                    new Potion("advancedalchemy_potion_of_freezing", new MobEffectInstance(ModEffects.FREEZING,3600,0)));
+
     public static final Holder<Potion> POTIONOFENDWARP =
             POTIONS.register("advancedalchemy_potion_of_end_warp", () ->
-                    new Potion("advancedalchemy_potion_of_end_warp", new MobEffectInstance(ModEffects.ENDWARPEFFECT,3600,0)));
+                    new Potion("advancedalchemy_potion_of_end_warp", new MobEffectInstance(ModEffects.ENDWARP,3600,0)));
 
     public static final Holder<Potion> POTIONOFRECOVERY=
             POTIONS.register("advancedalchemy_potion_of_recovery", () ->
-                    new Potion("advancedalchemy_potion_of_recovery", new MobEffectInstance(ModEffects.RECOVERYEFFECT,0,0)));
+                    new Potion("advancedalchemy_potion_of_recovery", new MobEffectInstance(ModEffects.RECOVERY,0,0)));
 
     public static final Holder<Potion> POTIONOFBLINDFURY =
             POTIONS.register("advancedalchemy_potion_of_blind_fury", () ->
