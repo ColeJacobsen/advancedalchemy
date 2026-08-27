@@ -21,6 +21,9 @@ public class ModEffects {
     public static final Holder<MobEffect> FROSTRESISTANCE = MOB_EFFECTS.register("frost_resistance",
             () -> new FrostResistanceEffect(MobEffectCategory.BENEFICIAL, 0x78edff));
 
+    public static final Holder<MobEffect> TELEPORTATION = MOB_EFFECTS.register("teleportation",
+            () -> new TeleportationEffect(MobEffectCategory.NEUTRAL, 0x79008f));
+
     public static final Holder<MobEffect> ENDWARP = MOB_EFFECTS.register("end_warp",
             () -> new EndWarpEffect(MobEffectCategory.NEUTRAL, 0x9840ad));
 

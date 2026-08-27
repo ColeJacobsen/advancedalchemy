@@ -60,6 +60,10 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_freezing", () ->
                     new Potion("advancedalchemy_potion_of_freezing", new MobEffectInstance(ModEffects.FREEZING,3600,0)));
 
+    public static final Holder<Potion> POTIONOFTELEPORTATION =
+            POTIONS.register("advancedalchemy_potion_of_teleportation", () ->
+                    new Potion("advancedalchemy_potion_of_teleportation", new MobEffectInstance(ModEffects.TELEPORTATION,3600,0)));
+
     public static final Holder<Potion> POTIONOFENDWARP =
             POTIONS.register("advancedalchemy_potion_of_end_warp", () ->
                     new Potion("advancedalchemy_potion_of_end_warp", new MobEffectInstance(ModEffects.ENDWARP,3600,0)));

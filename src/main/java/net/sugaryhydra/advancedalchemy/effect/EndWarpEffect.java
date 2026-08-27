@@ -16,6 +16,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class EndWarpEffect extends MobEffect {
+
+    private TeleportationEffect teleportEffect = new TeleportationEffect(MobEffectCategory.NEUTRAL, 0x79008f);
+
     public EndWarpEffect(MobEffectCategory category, int color)
     {
         super(category, color);
@@ -29,7 +32,7 @@ public class EndWarpEffect extends MobEffect {
 
     @Override
     public void onMobHurt(ServerLevel level, LivingEntity mob, int amplifier, DamageSource source, float damage) {
-        this.teleport(level, mob, amplifier);
+        teleportEffect.teleport(level, mob, amplifier);
         super.onMobHurt(level, mob, amplifier, source, damage);
     }
 
@@ -39,55 +42,4 @@ public class EndWarpEffect extends MobEffect {
         return true;
     }
 
-    public boolean teleport(ServerLevel level, LivingEntity mob, int amplification){
-        float WarpRange = (amplification + 2) * 8;
-
-        if (!level.isClientSide() && mob.isAlive())
-        {
-            double xx = mob.getX() + (mob.getRandom().nextDouble() - (double)0.5F) * (double)WarpRange;
-            double yy = mob.getY() + (double) (mob.getRandom().nextInt(64) -32);
-            double zz = mob.getZ() + (mob.getRandom().nextDouble() - (double)0.5F) * (double)WarpRange;
-
-            return teleport(level, mob, xx, yy, zz);
-        }
-
-        else
-        {
-            return false;
-        }
-    }
-
-    public boolean teleport(ServerLevel level, LivingEntity mob, double x, double y, double z)
-    {
-        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(x, y, z);
-
-        while (pos.getY() > level.getMinY() && !level.getBlockState(pos).blocksMotion())
-        {
-            pos.move(Direction.DOWN);
-        }
-
-        BlockState state = level.getBlockState(pos);
-        boolean standable = state.blocksMotion();
-        boolean isWet = state.getFluidState().is(FluidTags.WATER);
-        if(standable && !isWet)
-        {
-            Vec3 oldPos = mob.position();
-            boolean result = mob.randomTeleport(x, y, z, true);
-            if (result)
-            {
-                level.gameEvent(GameEvent.TELEPORT, oldPos, GameEvent.Context.of(mob));
-                if (!mob.isSilent()) {
-                    level.playSound(null, mob.xo, mob.yo, mob.zo, SoundEvents.PLAYER_TELEPORT, mob.getSoundSource(), 1.0F, 1.0F);
-                    mob.playSound(SoundEvents.PLAYER_TELEPORT, 1.0F, 1.0F);
-                }
-            }
-
-            return result;
-        }
-
-        else
-        {
-            return false;
-        }
-    }
 }
