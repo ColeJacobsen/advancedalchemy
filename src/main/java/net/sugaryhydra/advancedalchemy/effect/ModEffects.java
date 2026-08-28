@@ -33,6 +33,9 @@ public class ModEffects {
     public static final Holder<MobEffect> STEALTH = MOB_EFFECTS.register("stealth",
             () -> new StealthEffect(MobEffectCategory.BENEFICIAL, 0x616363));
 
+    public static final Holder<MobEffect> LIGHTNING = MOB_EFFECTS.register("lightning",
+            () -> new LightningEffect(MobEffectCategory.HARMFUL, 0xf5ff6b));
+
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

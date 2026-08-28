@@ -72,6 +72,10 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_stealth", () ->
                     new Potion("advancedalchemy_potion_of_stealth", new MobEffectInstance(ModEffects.STEALTH,3600,0)));
 
+    public static final Holder<Potion> POTIONOFLIGHTNING=
+            POTIONS.register("advancedalchemy_potion_of_lighting", () ->
+                    new Potion("advancedalchemy_potion_of_lightning", new MobEffectInstance(ModEffects.LIGHTNING,0,0)));
+
     public static final Holder<Potion> POTIONOFBLINDFURY =
             POTIONS.register("advancedalchemy_potion_of_blind_fury", () ->
                     new Potion("advancedalchemy_potion_of_blind_fury",

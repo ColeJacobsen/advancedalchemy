@@ -61,6 +61,11 @@
   "item.minecraft.potion.effect.advancedalchemy_potion_of_stealth": "Potion of Stealth",
   "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_stealth": "Splash Potion of Stealth",
   "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_stealth": "Lingering Potion of Stealth",
+  "effect.advancedalchemy.lightning": "Lightning",
+  "effect.advancedalchemy.lightning.description": "You've been...thunderstruck",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_lightning": "Lightning in a Bottle",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_lightning": "Lightning in a Splash Bottle",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_lightning": "Lingering Lightning in a Bottle",
   "item.minecraft.potion.effect.advancedalchemy_potion_of_blind_fury": "Potion of Blind Fury",
   "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_blind_fury": "Splash Potion of Blind Fury",
   "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_blind_fury": "Lingering Potion of Blind Fury"

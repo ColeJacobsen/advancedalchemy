@@ -40,6 +40,7 @@ public class ModEvents {
         builder.addMix(ModPotions.POTIONOFTELEPORTATION, ModItems.SHULKERGUTS.get(), ModPotions.POTIONOFENDWARP);
         builder.addMix(ModPotions.POTIONOFTELEPORTATION, Items.ECHO_SHARD, ModPotions.POTIONOFRECOVERY);
         builder.addMix(Potions.AWKWARD, Items.WOOL.white(), ModPotions.POTIONOFSTEALTH);
+        builder.addMix(Potions.AWKWARD, Items.GOLD_BLOCK, ModPotions.POTIONOFLIGHTNING);
     }
 
 }
