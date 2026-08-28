@@ -30,8 +30,8 @@ public class ModEffects {
     public static final Holder<MobEffect> RECOVERY = MOB_EFFECTS.register("recovery",
             () -> new RecoveryEffect(MobEffectCategory.NEUTRAL, 0x43A39B));
 
-    public static final Holder<MobEffect> FREEZING = MOB_EFFECTS.register("freezing",
-            () -> new FreezingEffect(MobEffectCategory.HARMFUL, 0xb5e2e6));
+    public static final Holder<MobEffect> STEALTH = MOB_EFFECTS.register("stealth",
+            () -> new StealthEffect(MobEffectCategory.BENEFICIAL, 0x616363));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

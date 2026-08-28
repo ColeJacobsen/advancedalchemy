@@ -36,11 +36,10 @@ public class ModEvents {
         //Vanilla Items, Modded Effects
         builder.addMix(Potions.AWKWARD, Items.SPONGE, ModPotions.POTIONOFDRYSKIN);
         builder.addMix(Potions.AWKWARD, Items.BLUE_ICE, ModPotions.POTIONOFFROSTRESISTANCE);
-        builder.addMix(ModPotions.POTIONOFFROSTRESISTANCE, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFFREEZING);
         builder.addMix(Potions.AWKWARD, Items.CHORUS_FRUIT, ModPotions.POTIONOFTELEPORTATION);
         builder.addMix(ModPotions.POTIONOFTELEPORTATION, ModItems.SHULKERGUTS.get(), ModPotions.POTIONOFENDWARP);
         builder.addMix(ModPotions.POTIONOFTELEPORTATION, Items.ECHO_SHARD, ModPotions.POTIONOFRECOVERY);
-
+        builder.addMix(Potions.AWKWARD, Items.WOOL.white(), ModPotions.POTIONOFSTEALTH);
     }
 
 }

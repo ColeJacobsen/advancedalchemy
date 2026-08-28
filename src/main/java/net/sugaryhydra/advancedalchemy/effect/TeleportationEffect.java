@@ -25,7 +25,7 @@ public class TeleportationEffect extends InstantaneousMobEffect {
     public boolean teleport(ServerLevel level, LivingEntity mob, int amplification){
         float WarpRange = (amplification + 2) * 8;
 
-        if (!level.isClientSide() && mob.isAlive())
+        if (!level.isClientSide() && mob.isAlive() && !mob.isInLiquid())
         {
             boolean breaker = false;
             while (!breaker)
@@ -47,6 +47,7 @@ public class TeleportationEffect extends InstantaneousMobEffect {
 
     public boolean teleport(ServerLevel level, LivingEntity mob, double x, double y, double z)
     {
+
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(x, y, z);
 
         while (pos.getY() > level.getMinY() && !level.getBlockState(pos).blocksMotion())
@@ -57,7 +58,7 @@ public class TeleportationEffect extends InstantaneousMobEffect {
         BlockState state = level.getBlockState(pos);
         boolean standable = state.blocksMotion();
         boolean isWet = state.getFluidState().is(FluidTags.WATER);
-        if(standable && !isWet)
+        if(!isWet || !standable)
         {
             Vec3 oldPos = mob.position();
             boolean result = mob.randomTeleport(x, y, z, true);
