@@ -18,5 +18,8 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.SHULKERGUTS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.WITHERBONE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.ANCIENTCELL.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.createFlatItemModel(ModItems.SLINGSHOT.get(), ModelTemplates.BOW);
+        itemModels.generateBow(ModItems.SLINGSHOT.get());
     }
 }
