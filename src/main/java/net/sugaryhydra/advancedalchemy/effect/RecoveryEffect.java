@@ -17,6 +17,7 @@ import java.awt.*;
 import java.util.Optional;
 import java.util.Set;
 
+//This player exclusive effect teleports the player to location of their previous death
 public class RecoveryEffect extends InstantaneousMobEffect {
 
     protected RecoveryEffect(MobEffectCategory category, int color) {
@@ -24,32 +25,35 @@ public class RecoveryEffect extends InstantaneousMobEffect {
     }
 
     public boolean applyEffectTick(ServerLevel level, LivingEntity mob, int amplification) {
+        //only works on players as other mobs do not respawn
         if (mob instanceof ServerPlayer player)
         {
-            Optional<GlobalPos> deathPos = player.getLastDeathLocation();
-            BlockPos pos = deathPos.get().pos();
+            Optional<GlobalPos> deathPos = player.getLastDeathLocation(); //gets last death positon
+            BlockPos pos = deathPos.get().pos(); //puts last death location into XYZ form
             int x = pos.getX();
             int y = pos.getY();
             int z = pos.getZ();
-            ServerLevel target = level.getServer().getLevel(deathPos.get().dimension());
-            teleport(level, target, mob, x, y, z);
+            ServerLevel target = level.getServer().getLevel(deathPos.get().dimension()); //gets the death location dimension
+            teleport(level, target, mob, x, y, z); //teleports the mob to the death location, potentially across dimensions
         }
         return true;
     }
 
+    //Custom teleport method in case of specific death situations
     public boolean teleport(ServerLevel level, ServerLevel targetLevel, LivingEntity mob, int x, int y, int z)
     {
-        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(x, y, z);
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(x, y, z); //puts the death location as a BlockPos
 
+        //Teleport location is moved up in case death location has become covered
         while (pos.getY() < targetLevel.getMaxY() && targetLevel.getBlockState(pos).blocksMotion())
         {
             pos.move(Direction.UP);
         }
         Vec3 oldPos = mob.position();
         mob.canTeleport(level, targetLevel);
-        mob.teleportTo(targetLevel, pos.getX(), pos.getY(), pos.getZ(), Set.of(), mob.getXRot(), mob.getYRot(), false);
+        mob.teleportTo(targetLevel, pos.getX(), pos.getY(), pos.getZ(), Set.of(), mob.getXRot(), mob.getYRot(), false); //This specific teleport method is used so that cross dimensionality is possible
         targetLevel.gameEvent(GameEvent.TELEPORT, oldPos, GameEvent.Context.of(mob));
-        mob.makePoofParticles();
+        //Creates a teleportation sound as long as the player is not silent
         if (!mob.isSilent()) {
             targetLevel.playSound((Entity)null, mob.xo, mob.yo, mob.zo, SoundEvents.PLAYER_TELEPORT, mob.getSoundSource(), 1.0F, 1.0F);
             mob.playSound(SoundEvents.PLAYER_TELEPORT, 1.0F, 1.0F);

@@ -9,9 +9,11 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sugaryhydra.advancedalchemy.AdvancedAlchemy;
 
 public class ModEffects {
+    //Creates a register for all new effects
     public static final DeferredRegister<MobEffect> MOB_EFFECTS =
             DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, AdvancedAlchemy.MOD_ID);
 
+    //Registers each effect with name, category, and respective particle/potion color
     public static final Holder<MobEffect> MILKY = MOB_EFFECTS.register("milky",
             () -> new MilkyEffect(MobEffectCategory.NEUTRAL, 0xffffff));
 

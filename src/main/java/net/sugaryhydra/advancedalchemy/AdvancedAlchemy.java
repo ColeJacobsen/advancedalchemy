@@ -1,16 +1,11 @@
 package net.sugaryhydra.advancedalchemy;
 
-import net.minecraft.world.level.ItemLike;
 import net.sugaryhydra.advancedalchemy.effect.ModEffects;
 import net.sugaryhydra.advancedalchemy.item.ModItems;
 import net.sugaryhydra.advancedalchemy.potion.ModPotions;
 import org.slf4j.Logger;
-
 import com.mojang.logging.LogUtils;
-
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -65,6 +60,10 @@ public class AdvancedAlchemy {
             event.accept(ModItems.SHULKERGUTS);
             event.accept(ModItems.WITHERBONE);
             event.accept(ModItems.ANCIENTCELL);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.SLINGSHOT);
         }
 
     }

@@ -1,22 +1,16 @@
 package net.sugaryhydra.advancedalchemy.effect;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.monster.EnderMan;
-import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.level.block.state.BlockState;
 
+//EndWarpEffect makes the mob act similarly to an enderman
+//in the sense that they teleport upon taking damage
 public class EndWarpEffect extends MobEffect {
 
+    //instance of TeleportationEffect to call
     private TeleportationEffect teleportEffect = new TeleportationEffect(MobEffectCategory.NEUTRAL, 0x79008f);
 
     public EndWarpEffect(MobEffectCategory category, int color)
@@ -30,9 +24,10 @@ public class EndWarpEffect extends MobEffect {
         return super.applyEffectTick(serverLevel, mob, amplification);
     }
 
+    //effect only kicks in on hurt
     @Override
     public void onMobHurt(ServerLevel level, LivingEntity mob, int amplifier, DamageSource source, float damage) {
-        teleportEffect.teleport(level, mob, amplifier);
+        teleportEffect.teleport(level, mob, amplifier); //calls the teleport method on hurt
         super.onMobHurt(level, mob, amplifier, source, damage);
     }
 

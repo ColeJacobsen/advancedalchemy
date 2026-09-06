@@ -13,9 +13,10 @@ import net.sugaryhydra.advancedalchemy.potion.ModPotions;
 @EventBusSubscriber(modid = AdvancedAlchemy.MOD_ID)
 public class ModEvents {
 
+    //registers custom brewing recipes so that can be used in game
     @SubscribeEvent
     public static void registerBrewingRecipes(RegisterBrewingRecipesEvent event) {
-        PotionBrewing.Builder builder = event.getBuilder();
+        PotionBrewing.Builder builder = event.getBuilder(); //The register
 
         //Vanilla Items, Vanilla Effects
         builder.addMix(Potions.AWKWARD, Items.POTENT_SULFUR, ModPotions.POTIONOFNAUSEA);
@@ -40,6 +41,7 @@ public class ModEvents {
         builder.addMix(ModPotions.POTIONOFTELEPORTATION, Items.ECHO_SHARD, ModPotions.POTIONOFRECOVERY);
         builder.addMix(Potions.AWKWARD, Items.WOOL.white(), ModPotions.POTIONOFSTEALTH);
         builder.addMix(Potions.AWKWARD, Items.GOLD_BLOCK, ModPotions.POTIONOFLIGHTNING);
+        builder.addMix(Potions.STRONG_STRENGTH, Items.ARMOR_STAND, ModPotions.POTIONOFPAINPOWER);
     }
 
 }

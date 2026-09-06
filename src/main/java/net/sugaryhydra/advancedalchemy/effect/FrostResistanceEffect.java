@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
+//Makes the mob immune to the freezing effect given by powder snow
 public class FrostResistanceEffect extends MobEffect {
     public FrostResistanceEffect(MobEffectCategory category, int color)
     {
@@ -14,6 +15,7 @@ public class FrostResistanceEffect extends MobEffect {
     @Override
     public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity mob, int amplification)
     {
+        //simply resets freezing ticks to 0 every tick
         mob.setTicksFrozen(0);
         return super.applyEffectTick(serverLevel, mob, amplification);
     }

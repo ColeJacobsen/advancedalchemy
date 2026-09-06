@@ -1,19 +1,16 @@
 package net.sugaryhydra.advancedalchemy.effect;
 
-import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import java.math.*;
 
+//Effect give the mob an amount of strength that is inversely proportional
+//to the amount of health and armor they have
 public class PainPowerEffect extends MobEffect {
-    private int tickCount;
 
     public PainPowerEffect(MobEffectCategory category, int color)
     {
@@ -23,11 +20,11 @@ public class PainPowerEffect extends MobEffect {
     @Override
     public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity mob, int amplification)
     {
-        float hp = mob.getHealth();
-        float ac = mob.getArmorValue();
-        int booster = Math.round((40 - (hp + ac)) / 4);
+        float hp = mob.getHealth(); //gets mob health
+        float ac = mob.getArmorValue(); //gets mob armor
+        int booster = Math.round((40 - (hp + ac)) / 4); //maximum health and armor would give strength 0, minimum give strength 10
 
-        MobEffectInstance tempStr = new MobEffectInstance(MobEffects.STRENGTH, 50, booster);
+        MobEffectInstance tempStr = new MobEffectInstance(MobEffects.STRENGTH, 50, booster); //creates a strength effect that is replaced when changed
         mob.addEffect(tempStr);
 
         return super.applyEffectTick(serverLevel, mob, amplification);
@@ -36,7 +33,6 @@ public class PainPowerEffect extends MobEffect {
     @Override
     public boolean shouldApplyEffectTickThisTick(int tickCount, int amplification)
     {
-        this.tickCount = tickCount;
         return true;
     }
 }

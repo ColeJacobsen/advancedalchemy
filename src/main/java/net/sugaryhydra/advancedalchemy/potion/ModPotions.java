@@ -1,6 +1,5 @@
 package net.sugaryhydra.advancedalchemy.potion;
 
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.sugaryhydra.advancedalchemy.AdvancedAlchemy;
 import net.minecraft.core.Holder;
@@ -13,9 +12,11 @@ import net.sugaryhydra.advancedalchemy.effect.ModEffects;
 
 public class ModPotions {
 
+    //Register for all custom potions
     public static final DeferredRegister<Potion> POTIONS =
             DeferredRegister.create(BuiltInRegistries.POTION, AdvancedAlchemy.MOD_ID);
 
+    //Registers name, effect(s), duration, and amplification of each potion
     public static final Holder<Potion> POTIONOFLEVITATION =
             POTIONS.register("advancedalchemy_potion_of_levitation", () ->
                             new Potion("advancedalchemy_potion_of_levitation", new MobEffectInstance(MobEffects.LEVITATION, 1200, 0)));

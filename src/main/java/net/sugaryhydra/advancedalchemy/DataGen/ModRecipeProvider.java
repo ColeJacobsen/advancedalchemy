@@ -35,13 +35,13 @@ public class ModRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes() {
         shaped(RecipeCategory.COMBAT, ModItems.SLINGSHOT)
-                .pattern("AAA")
+                .pattern("AAA") //3x3 character matrix represents the crafting grid
                 .pattern("B B")
                 .pattern(" B ")
-                .define('A', Items.STRING)
-                .define('B', Items.STICK)
-                .unlockedBy(getHasName(Items.STRING), has(Items.STRING))
-                .group("ModWeapons")
-                .save(output);
+                .define('A', Items.STRING) //Each item involved is assigned to a character
+                .define('B', Items.STICK) //Like a rhyme scheme
+                .unlockedBy(getHasName(Items.STRING), has(Items.STRING)) //Player unlocks the recipe upon receiving string
+                .group("ModWeapons") //Belongs to ModWeapons
+                .save(output); //saves the recipe
     }
 }
