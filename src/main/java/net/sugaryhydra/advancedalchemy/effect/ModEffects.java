@@ -38,8 +38,14 @@ public class ModEffects {
     public static final Holder<MobEffect> LIGHTNING = MOB_EFFECTS.register("lightning",
             () -> new LightningEffect(MobEffectCategory.HARMFUL, 0xf5ff6b));
 
+    public static final Holder<MobEffect> SHOCK = MOB_EFFECTS.register("shock",
+            () -> new ShockEffect(MobEffectCategory.BENEFICIAL, 0xb0e5ff));
+
     public static final Holder<MobEffect> PAINPOWER = MOB_EFFECTS.register("pain_power",
             () -> new PainPowerEffect(MobEffectCategory.BENEFICIAL, 0x661224));
+
+    public static final Holder<MobEffect> MEDIC = MOB_EFFECTS.register("medic",
+            () -> new MedicEffect(MobEffectCategory.BENEFICIAL, 0xfc5bd1));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

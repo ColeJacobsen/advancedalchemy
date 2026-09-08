@@ -42,6 +42,8 @@ public class ModEvents {
         builder.addMix(Potions.AWKWARD, Items.WOOL.white(), ModPotions.POTIONOFSTEALTH);
         builder.addMix(Potions.AWKWARD, Items.GOLD_BLOCK, ModPotions.POTIONOFLIGHTNING);
         builder.addMix(Potions.STRONG_STRENGTH, Items.ARMOR_STAND, ModPotions.POTIONOFPAINPOWER);
+        builder.addMix(ModPotions.POTIONOFLIGHTNING, Items.COPPER_INGOT, ModPotions.POTIONOFSHOCK);
+        builder.addMix(Potions.REGENERATION, Items.COPPER_INGOT, ModPotions.POTIONOMEDIC);
     }
 
 }

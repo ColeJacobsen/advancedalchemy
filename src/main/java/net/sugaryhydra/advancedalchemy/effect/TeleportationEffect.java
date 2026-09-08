@@ -35,7 +35,7 @@ public class TeleportationEffect extends InstantaneousMobEffect {
             while (!breaker)
             {
                 double xx = mob.getX() + (mob.getRandom().nextDouble() - (double)0.5F) * (double)WarpRange;
-                double yy = mob.getY() + (double) (mob.getRandom().nextInt(64) -32);
+                double yy = mob.getY() + (double) (mob.getRandom().nextInt((int)WarpRange));
                 double zz = mob.getZ() + (mob.getRandom().nextDouble() - (double)0.5F) * (double)WarpRange;
 
                 breaker = teleport(level, mob, xx, yy, zz); //returns true or false, breaking the loop on true
@@ -56,9 +56,9 @@ public class TeleportationEffect extends InstantaneousMobEffect {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(x, y, z);
 
         //Move the teleport position down if there is something in the way
-        while (pos.getY() > level.getMinY() && !level.getBlockState(pos).blocksMotion())
+        while (pos.getY() < level.getMaxY() && !level.getBlockState(pos).blocksMotion())
         {
-            pos.move(Direction.DOWN);
+            pos.move(Direction.UP);
         }
 
         BlockState state = level.getBlockState(pos);
