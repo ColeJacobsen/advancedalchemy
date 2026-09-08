@@ -92,5 +92,17 @@
   "item.minecraft.potion.effect.advancedalchemy_potion_of_pain_power": "Potion of Pain Power",
   "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_pain_power": "Splash Potion of Pain Power",
   "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_pain_power": "Lingering Potion of Pain Power",
-  "item.minecraft.tipped_arrow.effect.advancedalchemy_potion_of_pain_power": "Arrow of Pain Power"
+  "item.minecraft.tipped_arrow.effect.advancedalchemy_potion_of_pain_power": "Arrow of Pain Power",
+  "effect.advancedalchemy.shock": "Shock",
+  "effect.advancedalchemy.shock.description": "Zap your friends!",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_shock": "Potion of Shock",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_shock": "Splash Potion of Shock",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_shock": "Lingering Potion of Shock",
+  "item.minecraft.tipped_arrow.effect.advancedalchemy_potion_of_shock": "Arrow of Shock",
+  "effect.advancedalchemy.medic": "Medic",
+  "effect.advancedalchemy.medic.description": "Friendship is the best medicine",
+  "item.minecraft.potion.effect.advancedalchemy_potion_of_medic": "Potion of Medic",
+  "item.minecraft.splash_potion.effect.advancedalchemy_potion_of_medic": "Splash Potion of Medic",
+  "item.minecraft.lingering_potion.effect.advancedalchemy_potion_of_medic": "Lingering Potion of Medic",
+  "item.minecraft.tipped_arrow.effect.advancedalchemy_potion_of_medic": "Arrow of Medic"
 }

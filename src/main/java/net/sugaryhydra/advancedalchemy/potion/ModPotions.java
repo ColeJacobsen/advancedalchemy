@@ -41,6 +41,22 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_the_conduit", () ->
                     new Potion("advancedalchemy_potion_of_the_conduit", new MobEffectInstance(MobEffects.CONDUIT_POWER, 3600, 0)));
 
+    public static final Holder<Potion> POTIONOFDOLPHINSGRACE=
+            POTIONS.register("advancedalchemy_potion_of_dolphins_grace", () ->
+                    new Potion("advancedalchemy_potion_of_dolphins_grace", new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 3600, 0)));
+
+    public static final Holder<Potion> POTIONOFDARKNESS=
+            POTIONS.register("advancedalchemy_potion_of_darkness", () ->
+                    new Potion("advancedalchemy_potion_of_darkness", new MobEffectInstance(MobEffects.DARKNESS, 3600, 0)));
+
+    public static final Holder<Potion> POTIONOFSATURATION=
+            POTIONS.register("advancedalchemy_potion_of_saturation", () ->
+                    new Potion("advancedalchemy_potion_of_saturation", new MobEffectInstance(MobEffects.SATURATION, 3600, 0)));
+
+    public static final Holder<Potion> POTIONOFHUNGER=
+            POTIONS.register("advancedalchemy_potion_of_hunger", () ->
+                    new Potion("advancedalchemy_potion_of_hunger", new MobEffectInstance(MobEffects.HUNGER, 3600, 0)));
+
     public static final Holder<Potion> POTIONOFUNLUCK=
             POTIONS.register("advancedalchemy_potion_of_unluck", () ->
                     new Potion("advancedalchemy_potion_of_unluck", new MobEffectInstance(MobEffects.UNLUCK, 3600, 0)));
@@ -103,6 +119,12 @@ public class ModPotions {
                             new MobEffectInstance(MobEffects.FIRE_RESISTANCE,3600,0),
                             new MobEffectInstance(MobEffects.WATER_BREATHING,3600,0),
                             new MobEffectInstance(MobEffects.SLOW_FALLING, 3600, 0)));
+
+    public static final Holder<Potion> POTIONOFMOTION =
+            POTIONS.register("advancedalchemy_potion_of_motion", () ->
+                    new Potion("advancedalchemy_potion_of_motion",
+                            new MobEffectInstance(MobEffects.SPEED,3600,2),
+                            new MobEffectInstance(MobEffects.JUMP_BOOST,3600,2)));
 
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);
