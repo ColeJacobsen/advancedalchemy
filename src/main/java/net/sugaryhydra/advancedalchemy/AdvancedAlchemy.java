@@ -60,6 +60,7 @@ public class AdvancedAlchemy {
             event.accept(ModItems.SHULKERGUTS);
             event.accept(ModItems.WITHERBONE);
             event.accept(ModItems.ANCIENTCELL);
+            event.accept(ModItems.ELDERSPIKE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {

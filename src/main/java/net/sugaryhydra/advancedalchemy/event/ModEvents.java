@@ -22,11 +22,20 @@ public class ModEvents {
         builder.addMix(Potions.AWKWARD, Items.POTENT_SULFUR, ModPotions.POTIONOFNAUSEA);
         builder.addMix(Potions.LEAPING, Items.ENCHANTED_GOLDEN_APPLE, Potions.LUCK);
         builder.addMix(Potions.LUCK, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFUNLUCK);
-        builder.addMix(Potions.SWIFTNESS, Items.GOLD_INGOT, ModPotions.POTIONOFHASTE);
-        builder.addMix(ModPotions.POTIONOFHASTE, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFFATIGUE);
+        builder.addMix(Potions.SWIFTNESS, ModItems.ELDERSPIKE.get(), ModPotions.POTIONOFHASTE);
+        builder.addMix(Potions.AWKWARD, ModItems.ELDERSPIKE.get(), ModPotions.POTIONOFFATIGUE);
         builder.addMix(Potions.AWKWARD, Items.MILK_BUCKET, ModPotions.POTIONOFNULL);
         builder.addMix(Potions.AWKWARD, Items.SCULK_CATALYST, ModPotions.POTIONOFBLINDFURY);
         builder.addMix(ModPotions.POTIONOFHASTE, Items.HEART_OF_THE_SEA, ModPotions.POTIONOFTHECONDUIT);
+        builder.addMix(Potions.AWKWARD, Items.ROTTEN_FLESH, ModPotions.POTIONOFHUNGER);
+        builder.addMix(ModPotions.POTIONOFHUNGER, Items.GHAST_TEAR, ModPotions.POTIONOFSATURATION);
+
+        builder.addMix(Potions.STRONG_SWIFTNESS, Items.RABBIT_FOOT, ModPotions.POTIONOFMOTION);
+        builder.addMix(Potions.STRONG_LEAPING, Items.SUGAR, ModPotions.POTIONOFMOTION);
+
+        builder.addMix(Potions.NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFBLINDNESS);
+        builder.addMix(Potions.AWKWARD, Items.GLOWSTONE, ModPotions.POTIONOFGLOWING);
+        builder.addMix(ModPotions.POTIONOFGLOWING, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFDARKNESS);
 
         //Modded Items, Vanilla Effects
         builder.addMix(Potions.AWKWARD, ModItems.SHULKERGUTS.get(), ModPotions.POTIONOFLEVITATION);

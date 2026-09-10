@@ -18,6 +18,8 @@ public class ModItems {
     //An ingredient found in *NEW BIOME*, used to create the Potion of The Extremophile variants
     public static final DeferredItem<Item> ANCIENTCELL = ITEMS.registerSimpleItem("ancient_cell");
 
+    public static final DeferredItem<Item> ELDERSPIKE = ITEMS.registerSimpleItem("elder_spike");
+
     //A custom Bow Item used to fire Splash/Lingering Potions
     public static final DeferredItem<Item> SLINGSHOT = ITEMS.registerItem("sling_shot",
             properties -> new SlingShotItem(properties.durability(500)));

@@ -43,5 +43,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.STRING), has(Items.STRING)) //Player unlocks the recipe upon receiving string
                 .group("ModWeapons") //Belongs to ModWeapons
                 .save(output); //saves the recipe
+
+        shaped(RecipeCategory.COMBAT, Items.TRIDENT)
+                .pattern("AAA") //3x3 character matrix represents the crafting grid
+                .pattern(" B ")
+                .pattern(" B ")
+                .define('A', ModItems.ELDERSPIKE.get()) //Each item involved is assigned to a character
+                .define('B', Items.PRISMARINE_SHARD) //Like a rhyme scheme
+                .unlockedBy(getHasName(ModItems.ELDERSPIKE.get()), has(ModItems.ELDERSPIKE.get())) //Player unlocks the recipe upon receiving string
+                .group("Weapons") //Belongs to ModWeapons
+                .save(output); //saves the recipe
     }
 }

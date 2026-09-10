@@ -41,9 +41,13 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_the_conduit", () ->
                     new Potion("advancedalchemy_potion_of_the_conduit", new MobEffectInstance(MobEffects.CONDUIT_POWER, 3600, 0)));
 
-    public static final Holder<Potion> POTIONOFDOLPHINSGRACE=
-            POTIONS.register("advancedalchemy_potion_of_dolphins_grace", () ->
-                    new Potion("advancedalchemy_potion_of_dolphins_grace", new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 3600, 0)));
+    public static final Holder<Potion> POTIONOFBLINDNESS=
+            POTIONS.register("advancedalchemy_potion_of_blindness", () ->
+                    new Potion("advancedalchemy_potion_of_blindness", new MobEffectInstance(MobEffects.BLINDNESS, 3600, 0)));
+
+    public static final Holder<Potion> POTIONOFGLOWING=
+            POTIONS.register("advancedalchemy_potion_of_glowing", () ->
+                    new Potion("advancedalchemy_potion_of_glowing", new MobEffectInstance(MobEffects.GLOWING, 3600, 0)));
 
     public static final Holder<Potion> POTIONOFDARKNESS=
             POTIONS.register("advancedalchemy_potion_of_darkness", () ->
@@ -125,6 +129,14 @@ public class ModPotions {
                     new Potion("advancedalchemy_potion_of_motion",
                             new MobEffectInstance(MobEffects.SPEED,3600,2),
                             new MobEffectInstance(MobEffects.JUMP_BOOST,3600,2)));
+
+    public static final Holder<Potion> POTIONOFDISCOMBOBULATION=
+            POTIONS.register("advancedalchemy_potion_of_discombobulation", () ->
+                    new Potion("advancedalchemy_potion_of_discombobulation",
+                            new MobEffectInstance(MobEffects.NAUSEA,3600,4),
+                            new MobEffectInstance(MobEffects.BLINDNESS,3600,0),
+                            new MobEffectInstance(MobEffects.SPEED, 3600, 5),
+                            new MobEffectInstance(MobEffects.JUMP_BOOST, 3600, 4)));
 
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);
