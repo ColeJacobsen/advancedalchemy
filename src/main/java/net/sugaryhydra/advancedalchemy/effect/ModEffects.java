@@ -53,6 +53,12 @@ public class ModEffects {
     public static final Holder<MobEffect> FIERYEXPLOSIVE = MOB_EFFECTS.register("fiery_explosive",
             () -> new FieryExplosionEffect(MobEffectCategory.NEUTRAL, 0xff6f00));
 
+    public static final Holder<MobEffect> EXPLOSIVEWARD = MOB_EFFECTS.register("explosive_ward",
+            () -> new ExplosiveWardEffect(MobEffectCategory.BENEFICIAL, 0x00c224));
+
+    public static final Holder<MobEffect> GIGANTISM = MOB_EFFECTS.register("gigantism",
+            () -> new GigantismEffect(MobEffectCategory.BENEFICIAL, 0x00c224));
+
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

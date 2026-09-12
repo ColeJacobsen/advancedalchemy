@@ -30,12 +30,6 @@ public class ModEvents {
         builder.addMix(Potions.AWKWARD, Items.ROTTEN_FLESH, ModPotions.POTIONOFHUNGER);
         builder.addMix(ModPotions.POTIONOFHUNGER, Items.GHAST_TEAR, ModPotions.POTIONOFSATURATION);
 
-        builder.addMix(Potions.STRONG_SWIFTNESS, Items.RABBIT_FOOT, ModPotions.POTIONOFMOTION);
-        builder.addMix(Potions.STRONG_LEAPING, Items.SUGAR, ModPotions.POTIONOFMOTION);
-        builder.addMix(Potions.AWKWARD, Items.TNT, ModPotions.POTIONOFEXPLOSION);
-        builder.addMix(ModPotions.POTIONOFEXPLOSION, Items.BLAZE_POWDER, ModPotions.POTIONOFFIERYEXPLOSION);
-        builder.addMix(Potions.AWKWARD, Items.FIRE_CHARGE, ModPotions.POTIONOFFIERYEXPLOSION);
-
         builder.addMix(Potions.NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFBLINDNESS);
         builder.addMix(Potions.AWKWARD, Items.GLOW_INK_SAC, ModPotions.POTIONOFGLOWING);
         builder.addMix(ModPotions.POTIONOFGLOWING, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFDARKNESS);
@@ -57,6 +51,14 @@ public class ModEvents {
         builder.addMix(Potions.STRONG_STRENGTH, Items.ARMOR_STAND, ModPotions.POTIONOFPAINPOWER);
         builder.addMix(ModPotions.POTIONOFLIGHTNING, Items.COPPER_INGOT, ModPotions.POTIONOFSHOCK);
         builder.addMix(Potions.REGENERATION, Items.COPPER_INGOT, ModPotions.POTIONOMEDIC);
+
+        builder.addMix(Potions.STRONG_SWIFTNESS, Items.RABBIT_FOOT, ModPotions.POTIONOFMOTION);
+        builder.addMix(Potions.STRONG_LEAPING, Items.SUGAR, ModPotions.POTIONOFMOTION);
+        builder.addMix(Potions.AWKWARD, Items.TNT, ModPotions.POTIONOFEXPLOSION);
+        builder.addMix(ModPotions.POTIONOFEXPLOSION, Items.BLAZE_POWDER, ModPotions.POTIONOFFIERYEXPLOSION);
+        builder.addMix(Potions.AWKWARD, Items.FIRE_CHARGE, ModPotions.POTIONOFFIERYEXPLOSION);
+        builder.addMix(ModPotions.POTIONOFEXPLOSION, Items.CREEPER_HEAD, ModPotions.POTIONOFEXPLOSIVEWARD);
+        builder.addMix(Potions.AWKWARD, Items.BEETROOT, ModPotions.POTIONOFGIGANTISM);
     }
 
 }

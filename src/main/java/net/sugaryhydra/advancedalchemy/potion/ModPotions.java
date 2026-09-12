@@ -117,6 +117,14 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_fiery_explosion", () ->
                     new Potion("advancedalchemy_potion_of_fiery_explosion", new MobEffectInstance(ModEffects.FIERYEXPLOSIVE,0,0)));
 
+    public static final Holder<Potion> POTIONOFEXPLOSIVEWARD=
+            POTIONS.register("advancedalchemy_potion_of_explosive_ward", () ->
+                    new Potion("advancedalchemy_potion_of_explosive_ward", new MobEffectInstance(ModEffects.EXPLOSIVEWARD,3600,0)));
+
+    public static final Holder<Potion> POTIONOFGIGANTISM=
+            POTIONS.register("advancedalchemy_potion_of_gigantism", () ->
+                    new Potion("advancedalchemy_potion_of_gigantism", new MobEffectInstance(ModEffects.GIGANTISM,3600,0)));
+
     public static final Holder<Potion> POTIONOFBLINDFURY =
             POTIONS.register("advancedalchemy_potion_of_blind_fury", () ->
                     new Potion("advancedalchemy_potion_of_blind_fury",
