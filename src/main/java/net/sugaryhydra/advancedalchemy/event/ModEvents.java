@@ -32,10 +32,14 @@ public class ModEvents {
 
         builder.addMix(Potions.STRONG_SWIFTNESS, Items.RABBIT_FOOT, ModPotions.POTIONOFMOTION);
         builder.addMix(Potions.STRONG_LEAPING, Items.SUGAR, ModPotions.POTIONOFMOTION);
+        builder.addMix(Potions.AWKWARD, Items.TNT, ModPotions.POTIONOFEXPLOSION);
+        builder.addMix(ModPotions.POTIONOFEXPLOSION, Items.BLAZE_POWDER, ModPotions.POTIONOFFIERYEXPLOSION);
+        builder.addMix(Potions.AWKWARD, Items.FIRE_CHARGE, ModPotions.POTIONOFFIERYEXPLOSION);
 
         builder.addMix(Potions.NIGHT_VISION, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFBLINDNESS);
-        builder.addMix(Potions.AWKWARD, Items.GLOWSTONE, ModPotions.POTIONOFGLOWING);
+        builder.addMix(Potions.AWKWARD, Items.GLOW_INK_SAC, ModPotions.POTIONOFGLOWING);
         builder.addMix(ModPotions.POTIONOFGLOWING, Items.FERMENTED_SPIDER_EYE, ModPotions.POTIONOFDARKNESS);
+        builder.addMix(Potions.TURTLE_MASTER, ModItems.SHULKERGUTS.get(), ModPotions.POTIONOFSHULKERMASTER);
 
         //Modded Items, Vanilla Effects
         builder.addMix(Potions.AWKWARD, ModItems.SHULKERGUTS.get(), ModPotions.POTIONOFLEVITATION);

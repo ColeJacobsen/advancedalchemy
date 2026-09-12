@@ -38,7 +38,12 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
         add("elder_spike_from_elder_guardian",
                 new AddTableLootModifier(new LootItemCondition[] {
                         new LootTableIdCondition.Builder(Identifier.withDefaultNamespace("entities/elder_guardian")).build()
-                },1000, ModExtraLootProvider.WITHER_BONE));
+                },1000, ModExtraLootProvider.ELDER_SPIKE));
+
+       // add("head_from_player",
+         //       new AddTableLootModifier(new LootItemCondition[] {
+           //             new LootTableIdCondition.Builder(Identifier.withDefaultNamespace("entities/player")).build()
+             //   },1000, ModExtraLootProvider.HEAD));
 
     }
 }

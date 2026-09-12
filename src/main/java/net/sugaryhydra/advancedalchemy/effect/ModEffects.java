@@ -47,6 +47,12 @@ public class ModEffects {
     public static final Holder<MobEffect> MEDIC = MOB_EFFECTS.register("medic",
             () -> new MedicEffect(MobEffectCategory.BENEFICIAL, 0xfc5bd1));
 
+    public static final Holder<MobEffect> EXPLOSIVE = MOB_EFFECTS.register("explosive",
+            () -> new ExplosiveEffect(MobEffectCategory.NEUTRAL, 0xa81616));
+
+    public static final Holder<MobEffect> FIERYEXPLOSIVE = MOB_EFFECTS.register("fiery_explosive",
+            () -> new FieryExplosionEffect(MobEffectCategory.NEUTRAL, 0xff6f00));
+
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

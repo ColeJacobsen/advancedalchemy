@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -24,6 +25,8 @@ public class ModExtraLootProvider implements LootTableSubProvider {
             Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "extra/glm/shulker_guts"));
     public static final ResourceKey<LootTable> ELDER_SPIKE = ResourceKey.create(Registries.LOOT_TABLE,
             Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "extra/glm/elder_spike"));
+    public static final ResourceKey<LootTable> HEAD = ResourceKey.create(Registries.LOOT_TABLE,
+            Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "extra/glm/head"));
 
 
     public ModExtraLootProvider(HolderLookup.Provider provider){
@@ -41,15 +44,18 @@ public class ModExtraLootProvider implements LootTableSubProvider {
 
         biConsumer.accept(SHULKER_GUTS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1f)) //table is always rolled
-                        .when(LootItemRandomChanceCondition.randomChance(1.0f)) //Occurs 100% of the time
+                        .setRolls(ConstantValue.exactly(1f)) //table is always rolled//Occurs 100% of the time
                         .add(LootItem.lootTableItem(ModItems.SHULKERGUTS.get()))));
 
         biConsumer.accept(ELDER_SPIKE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1f)) //table is always rolled
-                        .when(LootItemRandomChanceCondition.randomChance(1.0f)) //Occurs 100% of the time
-                        .add(LootItem.lootTableItem(ModItems.ELDERSPIKE.get()))
+                        .add(LootItem.lootTableItem(ModItems.ELDERSPIKE.get())) //Occurs 100% of the time as there is no chance
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(3f, 5f)))));
+
+       // biConsumer.accept(HEAD,
+         //       LootTable.lootTable().withPool(LootPool.lootPool()
+           //             .setRolls(ConstantValue.exactly(1f)) //table is always rolled
+             //           .add(LootItem.lootTableItem(Items.PLAYER_HEAD))));
     }
 }

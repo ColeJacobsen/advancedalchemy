@@ -109,6 +109,14 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_medic", () ->
                     new Potion("advancedalchemy_potion_of_medic", new MobEffectInstance(ModEffects.MEDIC,3600,0)));
 
+    public static final Holder<Potion> POTIONOFEXPLOSION=
+            POTIONS.register("advancedalchemy_potion_of_explosion", () ->
+                    new Potion("advancedalchemy_potion_of_explosion", new MobEffectInstance(ModEffects.EXPLOSIVE,0,0)));
+
+    public static final Holder<Potion> POTIONOFFIERYEXPLOSION=
+            POTIONS.register("advancedalchemy_potion_of_fiery_explosion", () ->
+                    new Potion("advancedalchemy_potion_of_fiery_explosion", new MobEffectInstance(ModEffects.FIERYEXPLOSIVE,0,0)));
+
     public static final Holder<Potion> POTIONOFBLINDFURY =
             POTIONS.register("advancedalchemy_potion_of_blind_fury", () ->
                     new Potion("advancedalchemy_potion_of_blind_fury",
@@ -137,6 +145,27 @@ public class ModPotions {
                             new MobEffectInstance(MobEffects.BLINDNESS,3600,0),
                             new MobEffectInstance(MobEffects.SPEED, 3600, 5),
                             new MobEffectInstance(MobEffects.JUMP_BOOST, 3600, 4)));
+
+    public static final Holder<Potion> POTIONOFEXHAUSTION=
+            POTIONS.register("advancedalchemy_potion_of_exhaustion", () ->
+                    new Potion("advancedalchemy_potion_of_exhaustion",
+                            new MobEffectInstance(MobEffects.NAUSEA,1200,0),
+                            new MobEffectInstance(MobEffects.MINING_FATIGUE,3600,0),
+                            new MobEffectInstance(MobEffects.SLOWNESS, 3600, 0),
+                            new MobEffectInstance(MobEffects.HUNGER, 3600, 0)));
+
+    public static final Holder<Potion> POTIONOFSHULKERMASTER=
+            POTIONS.register("advancedalchemy_potion_of_shulker_master", () ->
+                    new Potion("advancedalchemy_potion_of_shulker_master",
+                            new MobEffectInstance(MobEffects.SLOWNESS,3600,5),
+                            new MobEffectInstance(MobEffects.RESISTANCE,3600,4),
+                            new MobEffectInstance(ModEffects.ENDWARP, 3600, 0)));
+
+    public static final Holder<Potion> POTIONOFOCEANMOTION=
+            POTIONS.register("advancedalchemy_potion_of_ocean_motion", () ->
+                    new Potion("advancedalchemy_potion_of_ocean_motion",
+                            new MobEffectInstance(MobEffects.WATER_BREATHING,3600,0),
+                            new MobEffectInstance(MobEffects.DOLPHINS_GRACE,3600,2)));
 
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);
