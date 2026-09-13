@@ -57,7 +57,10 @@ public class ModEffects {
             () -> new ExplosiveWardEffect(MobEffectCategory.BENEFICIAL, 0x00c224));
 
     public static final Holder<MobEffect> GIGANTISM = MOB_EFFECTS.register("gigantism",
-            () -> new GigantismEffect(MobEffectCategory.BENEFICIAL, 0x00c224));
+            () -> new GigantismEffect(MobEffectCategory.NEUTRAL, 0xff9021));
+
+    public static final Holder<MobEffect> SHRUNKEN = MOB_EFFECTS.register("shrunken",
+            () -> new ShrunkenEffect(MobEffectCategory.NEUTRAL, 0x7abfff));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

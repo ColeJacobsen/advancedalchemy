@@ -6,6 +6,9 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+
 import java.math.*;
 
 //Effect give the mob an amount of strength that is inversely proportional
@@ -17,17 +20,26 @@ public class PainPowerEffect extends MobEffect {
         super(category, color);
     }
 
+    public double originalAttack;
+
     @Override
     public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity mob, int amplification)
     {
         float hp = mob.getHealth(); //gets mob health
         float ac = mob.getArmorValue(); //gets mob armor
-        int booster = Math.round((40 - (hp + ac)) / 4); //maximum health and armor would give strength 0, minimum give strength 10
+        int booster = Math.round(40 - (hp + ac)); //maximum health and armor would give strength 0, minimum give strength 10
 
-        MobEffectInstance tempStr = new MobEffectInstance(MobEffects.STRENGTH, 50, booster); //creates a strength effect that is replaced when changed
-        mob.addEffect(tempStr);
+        AttributeInstance attack = mob.getAttribute(Attributes.ATTACK_DAMAGE);
+        attack.setBaseValue(booster);
 
         return super.applyEffectTick(serverLevel, mob, amplification);
+    }
+
+    @Override
+    public void onEffectAdded(LivingEntity mob, int amplifier) {
+        AttributeInstance attack = mob.getAttribute(Attributes.ATTACK_DAMAGE);
+        originalAttack = attack.getBaseValue();
+        super.onEffectAdded(mob, amplifier);
     }
 
     @Override

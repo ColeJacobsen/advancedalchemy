@@ -125,6 +125,10 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_gigantism", () ->
                     new Potion("advancedalchemy_potion_of_gigantism", new MobEffectInstance(ModEffects.GIGANTISM,3600,0)));
 
+    public static final Holder<Potion> POTIONOFSHRUNKEN=
+            POTIONS.register("advancedalchemy_potion_of_shrunken", () ->
+                    new Potion("advancedalchemy_potion_of_shrunken", new MobEffectInstance(ModEffects.SHRUNKEN,3600,0)));
+
     public static final Holder<Potion> POTIONOFBLINDFURY =
             POTIONS.register("advancedalchemy_potion_of_blind_fury", () ->
                     new Potion("advancedalchemy_potion_of_blind_fury",

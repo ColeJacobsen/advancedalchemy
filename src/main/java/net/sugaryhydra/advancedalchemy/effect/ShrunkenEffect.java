@@ -7,9 +7,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
-public class GigantismEffect extends MobEffect {
+public class ShrunkenEffect extends MobEffect {
 
-    protected GigantismEffect(MobEffectCategory category, int color) {
+    protected ShrunkenEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 
@@ -22,7 +22,7 @@ public class GigantismEffect extends MobEffect {
     @Override
     public void onEffectStarted(LivingEntity mob, int amplifier) {
         AttributeInstance scale = mob.getAttribute(Attributes.SCALE);
-        scale.setBaseValue((amplifier + 1.5)); //minimum increase is 1.5
+        scale.setBaseValue(1.0 / ((amplifier * 2) + 2)); //minimum increase is 1.5
         super.onEffectStarted(mob, amplifier);
     }
 

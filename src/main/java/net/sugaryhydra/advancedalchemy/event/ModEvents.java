@@ -1,12 +1,19 @@
 package net.sugaryhydra.advancedalchemy.event;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
+import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.sugaryhydra.advancedalchemy.AdvancedAlchemy;
+import net.sugaryhydra.advancedalchemy.effect.ModEffects;
+import net.sugaryhydra.advancedalchemy.effect.PainPowerEffect;
 import net.sugaryhydra.advancedalchemy.item.ModItems;
 import net.sugaryhydra.advancedalchemy.potion.ModPotions;
 
@@ -59,6 +66,42 @@ public class ModEvents {
         builder.addMix(Potions.AWKWARD, Items.FIRE_CHARGE, ModPotions.POTIONOFFIERYEXPLOSION);
         builder.addMix(ModPotions.POTIONOFEXPLOSION, Items.CREEPER_HEAD, ModPotions.POTIONOFEXPLOSIVEWARD);
         builder.addMix(Potions.AWKWARD, Items.BEETROOT, ModPotions.POTIONOFGIGANTISM);
+        builder.addMix(Potions.AWKWARD, Items.EGG, ModPotions.POTIONOFSHRUNKEN);
+    }
+
+    @SubscribeEvent
+    public static void onEffectRemove(MobEffectEvent.Remove event)
+    {
+        LivingEntity entity = event.getEntity();
+
+        if(event.getEffect().is(ModEffects.GIGANTISM) || event.getEffect().is(ModEffects.SHRUNKEN))
+        {
+            AttributeInstance scale = entity.getAttribute(Attributes.SCALE);
+            scale.setBaseValue(1.0D);
+        }
+        if(event.getEffect() instanceof PainPowerEffect pain)
+        {
+            AttributeInstance attack = entity.getAttribute(Attributes.ATTACK_DAMAGE);
+            attack.setBaseValue(pain.originalAttack);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onEffectExpire(MobEffectEvent.Expired event)
+    {
+        LivingEntity entity = event.getEntity(); //Gets the entity whose attributes need to be reset
+
+        //Resets the scale attribute after the Gigantism or Shrunken effects end
+        if(event.getEffectInstance().is(ModEffects.GIGANTISM) || event.getEffectInstance().is(ModEffects.SHRUNKEN))
+        {
+            AttributeInstance scale = entity.getAttribute(Attributes.SCALE);
+            scale.setBaseValue(1.0D);
+        }
+        if(event.getEffectInstance().is(ModEffects.PAINPOWER))
+        {
+            AttributeInstance attack = entity.getAttribute(Attributes.ATTACK_DAMAGE);
+            attack.setBaseValue(1.0D);
+        }
     }
 
 }
