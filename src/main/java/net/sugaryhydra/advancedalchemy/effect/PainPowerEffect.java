@@ -1,5 +1,6 @@
 package net.sugaryhydra.advancedalchemy.effect;
 
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -7,7 +8,10 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeMap;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.sugaryhydra.advancedalchemy.AdvancedAlchemy;
 
 import java.math.*;
 
@@ -20,8 +24,6 @@ public class PainPowerEffect extends MobEffect {
         super(category, color);
     }
 
-    public double originalAttack;
-
     @Override
     public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity mob, int amplification)
     {
@@ -29,17 +31,12 @@ public class PainPowerEffect extends MobEffect {
         float ac = mob.getArmorValue(); //gets mob armor
         int booster = Math.round(40 - (hp + ac)); //maximum health and armor would give strength 0, minimum give strength 10
 
-        AttributeInstance attack = mob.getAttribute(Attributes.ATTACK_DAMAGE);
-        attack.setBaseValue(booster);
+        Identifier id = Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "advancedalchemypainpower");
+        AttributeModifier power = new AttributeModifier(id, booster, AttributeModifier.Operation.ADD_VALUE);
+        AttributeMap attributes = mob.getAttributes();
+        attributes.getInstance(Attributes.ATTACK_DAMAGE).addOrUpdateTransientModifier(power);
 
         return super.applyEffectTick(serverLevel, mob, amplification);
-    }
-
-    @Override
-    public void onEffectAdded(LivingEntity mob, int amplifier) {
-        AttributeInstance attack = mob.getAttribute(Attributes.ATTACK_DAMAGE);
-        originalAttack = attack.getBaseValue();
-        super.onEffectAdded(mob, amplifier);
     }
 
     @Override

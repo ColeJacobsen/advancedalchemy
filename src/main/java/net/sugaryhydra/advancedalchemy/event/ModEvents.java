@@ -1,8 +1,13 @@
 package net.sugaryhydra.advancedalchemy.event;
 
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeMap;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
@@ -73,16 +78,22 @@ public class ModEvents {
     public static void onEffectRemove(MobEffectEvent.Remove event)
     {
         LivingEntity entity = event.getEntity();
+        AttributeMap attributes = entity.getAttributes();
 
-        if(event.getEffect().is(ModEffects.GIGANTISM) || event.getEffect().is(ModEffects.SHRUNKEN))
+        if(event.getEffect().is(ModEffects.GIGANTISM))
         {
-            AttributeInstance scale = entity.getAttribute(Attributes.SCALE);
-            scale.setBaseValue(1.0D);
+            Identifier id = Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "advancedalchemygigantism");
+            attributes.getInstance(Attributes.SCALE).removeModifier(id);
         }
-        if(event.getEffect() instanceof PainPowerEffect pain)
+        if(event.getEffectInstance().is(ModEffects.SHRUNKEN))
         {
-            AttributeInstance attack = entity.getAttribute(Attributes.ATTACK_DAMAGE);
-            attack.setBaseValue(pain.originalAttack);
+            Identifier id = Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "advancedalchemyshrunken");
+            attributes.getInstance(Attributes.SCALE).removeModifier(id);
+        }
+        if(event.getEffectInstance().is(ModEffects.PAINPOWER))
+        {
+            Identifier id = Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "advancedalchemypainpower");
+            attributes.getInstance(Attributes.ATTACK_DAMAGE).removeModifier(id);
         }
     }
 
@@ -90,17 +101,22 @@ public class ModEvents {
     public static void onEffectExpire(MobEffectEvent.Expired event)
     {
         LivingEntity entity = event.getEntity(); //Gets the entity whose attributes need to be reset
-
+        AttributeMap attributes = entity.getAttributes();
         //Resets the scale attribute after the Gigantism or Shrunken effects end
-        if(event.getEffectInstance().is(ModEffects.GIGANTISM) || event.getEffectInstance().is(ModEffects.SHRUNKEN))
+        if(event.getEffectInstance().is(ModEffects.GIGANTISM))
         {
-            AttributeInstance scale = entity.getAttribute(Attributes.SCALE);
-            scale.setBaseValue(1.0D);
+            Identifier id = Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "advancedalchemygigantism");
+            attributes.getInstance(Attributes.SCALE).removeModifier(id);
+        }
+        if(event.getEffectInstance().is(ModEffects.SHRUNKEN))
+        {
+            Identifier id = Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "advancedalchemyshrunken");
+            attributes.getInstance(Attributes.SCALE).removeModifier(id);
         }
         if(event.getEffectInstance().is(ModEffects.PAINPOWER))
         {
-            AttributeInstance attack = entity.getAttribute(Attributes.ATTACK_DAMAGE);
-            attack.setBaseValue(1.0D);
+            Identifier id = Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "advancedalchemypainpower");
+            attributes.getInstance(Attributes.ATTACK_DAMAGE).removeModifier(id);
         }
     }
 
