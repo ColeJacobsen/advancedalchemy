@@ -40,6 +40,11 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
                         new LootTableIdCondition.Builder(Identifier.withDefaultNamespace("entities/elder_guardian")).build()
                 },1000, ModExtraLootProvider.ELDER_SPIKE));
 
+        add("ancient_cell_from_sniffer",
+                new AddTableLootModifier(new LootItemCondition[] {
+                        new LootTableIdCondition.Builder(Identifier.withDefaultNamespace("gameplay/sniffer_digging")).build()
+                },1000, ModExtraLootProvider.ANCIENT_CELL));
+
        // add("head_from_player",
          //       new AddTableLootModifier(new LootItemCondition[] {
            //             new LootTableIdCondition.Builder(Identifier.withDefaultNamespace("entities/player")).build()

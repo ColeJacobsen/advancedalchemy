@@ -27,6 +27,8 @@ public class ModExtraLootProvider implements LootTableSubProvider {
             Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "extra/glm/elder_spike"));
     public static final ResourceKey<LootTable> HEAD = ResourceKey.create(Registries.LOOT_TABLE,
             Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "extra/glm/head"));
+    public static final ResourceKey<LootTable> ANCIENT_CELL = ResourceKey.create(Registries.LOOT_TABLE,
+            Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "extra/glm/ancient_cell"));
 
 
     public ModExtraLootProvider(HolderLookup.Provider provider){
@@ -52,6 +54,11 @@ public class ModExtraLootProvider implements LootTableSubProvider {
                         .setRolls(ConstantValue.exactly(1f)) //table is always rolled
                         .add(LootItem.lootTableItem(ModItems.ELDERSPIKE.get())) //Occurs 100% of the time as there is no chance
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(3f, 5f)))));
+
+        biConsumer.accept(ANCIENT_CELL,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1f)) //table is always rolled//Occurs 100% of the time
+                        .add(LootItem.lootTableItem(ModItems.ANCIENTCELL.get()))));
 
        // biConsumer.accept(HEAD,
          //       LootTable.lootTable().withPool(LootPool.lootPool()

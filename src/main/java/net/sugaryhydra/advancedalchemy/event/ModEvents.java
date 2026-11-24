@@ -72,6 +72,7 @@ public class ModEvents {
         builder.addMix(ModPotions.POTIONOFEXPLOSION, Items.CREEPER_HEAD, ModPotions.POTIONOFEXPLOSIVEWARD);
         builder.addMix(Potions.AWKWARD, Items.BEETROOT, ModPotions.POTIONOFGIGANTISM);
         builder.addMix(Potions.AWKWARD, Items.EGG, ModPotions.POTIONOFSHRUNKEN);
+        builder.addMix(Potions.OOZING, Items.SLIME_BLOCK, ModPotions.POTIONOFSLIMY);
     }
 
     @SubscribeEvent
@@ -84,6 +85,9 @@ public class ModEvents {
         {
             Identifier id = Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "advancedalchemygigantism");
             attributes.getInstance(Attributes.SCALE).removeModifier(id);
+            attributes.getInstance(Attributes.ATTACK_DAMAGE).removeModifier(id);
+            attributes.getInstance(Attributes.STEP_HEIGHT).removeModifier(id);
+            attributes.getInstance(Attributes.MAX_HEALTH).removeModifier(id);
         }
         if(event.getEffectInstance().is(ModEffects.SHRUNKEN))
         {
@@ -107,6 +111,9 @@ public class ModEvents {
         {
             Identifier id = Identifier.fromNamespaceAndPath(AdvancedAlchemy.MOD_ID, "advancedalchemygigantism");
             attributes.getInstance(Attributes.SCALE).removeModifier(id);
+            attributes.getInstance(Attributes.ATTACK_DAMAGE).removeModifier(id);
+            attributes.getInstance(Attributes.STEP_HEIGHT).removeModifier(id);
+            attributes.getInstance(Attributes.MAX_HEALTH).removeModifier(id);
         }
         if(event.getEffectInstance().is(ModEffects.SHRUNKEN))
         {

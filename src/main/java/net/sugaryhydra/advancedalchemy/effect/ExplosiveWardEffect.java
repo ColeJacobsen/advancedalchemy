@@ -44,7 +44,7 @@ public class ExplosiveWardEffect extends MobEffect {
                 source.is(DamageTypes.WITHER_SKULL))
         {
             BlockPos pos = mob.blockPosition(); //gets the mob position
-            level.explode(mob, pos.getX(), pos.getY(), pos.getZ(), (amplifier + 3), Level.ExplosionInteraction.MOB);
+            level.explode(mob, pos.getX(), pos.getY(), pos.getZ(), (amplifier + 1), Level.ExplosionInteraction.MOB);
         }
         super.onMobHurt(level, mob, amplifier, source, damage);
     }

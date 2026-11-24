@@ -2,11 +2,13 @@ package net.sugaryhydra.advancedalchemy.effect;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sugaryhydra.advancedalchemy.AdvancedAlchemy;
+import java.util.function.ToIntFunction;
 
 public class ModEffects {
     //Creates a register for all new effects
@@ -61,6 +63,9 @@ public class ModEffects {
 
     public static final Holder<MobEffect> SHRUNKEN = MOB_EFFECTS.register("shrunken",
             () -> new ShrunkenEffect(MobEffectCategory.NEUTRAL, 0x7abfff));
+
+    public static final Holder<MobEffect> SLIMY = MOB_EFFECTS.register("slimy",
+            () -> new SlimyEffect(MobEffectCategory.NEUTRAL, 0x73FF8D, 0.5F, 3));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

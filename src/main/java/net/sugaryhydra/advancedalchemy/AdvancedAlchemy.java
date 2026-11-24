@@ -1,5 +1,6 @@
 package net.sugaryhydra.advancedalchemy;
 
+import net.sugaryhydra.advancedalchemy.block.ModBlocks;
 import net.sugaryhydra.advancedalchemy.effect.ModEffects;
 import net.sugaryhydra.advancedalchemy.item.ModItems;
 import net.sugaryhydra.advancedalchemy.potion.ModPotions;
@@ -33,9 +34,11 @@ public class AdvancedAlchemy {
         modEventBus.addListener(this::commonSetup);
 
         //registers items
+        ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModPotions.register(modEventBus);
         ModEffects.register(modEventBus);
+
 
 
         NeoForge.EVENT_BUS.register(this);
@@ -65,6 +68,10 @@ public class AdvancedAlchemy {
 
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.SLINGSHOT);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModBlocks.BLUE_LOG);
         }
 
     }

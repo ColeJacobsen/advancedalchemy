@@ -6,6 +6,7 @@ import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.data.PackOutput;
 import net.sugaryhydra.advancedalchemy.AdvancedAlchemy;
+import net.sugaryhydra.advancedalchemy.block.ModBlocks;
 import net.sugaryhydra.advancedalchemy.item.ModItems;
 
 public class ModModelProvider extends ModelProvider {
@@ -22,5 +23,7 @@ public class ModModelProvider extends ModelProvider {
 
         itemModels.createFlatItemModel(ModItems.SLINGSHOT.get(), ModelTemplates.BOW);
         itemModels.generateBow(ModItems.SLINGSHOT.get());
+
+        blockModels.createTrivialCube(ModBlocks.BLUE_LOG.get());
     }
 }

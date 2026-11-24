@@ -105,6 +105,10 @@ public class ModPotions {
             POTIONS.register("advancedalchemy_potion_of_pain_power", () ->
                     new Potion("advancedalchemy_potion_of_pain_power", new MobEffectInstance(ModEffects.PAINPOWER,3600,0)));
 
+    public static final Holder<Potion> POTIONOFSLIMY=
+            POTIONS.register("advancedalchemy_potion_of_slimy", () ->
+                    new Potion("advancedalchemy_potion_of_slimy", new MobEffectInstance(ModEffects.SLIMY,3600,0)));
+
     public static final Holder<Potion> POTIONOMEDIC=
             POTIONS.register("advancedalchemy_potion_of_medic", () ->
                     new Potion("advancedalchemy_potion_of_medic", new MobEffectInstance(ModEffects.MEDIC,3600,0)));
